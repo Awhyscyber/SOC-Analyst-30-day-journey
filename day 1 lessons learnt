@@ -1,0 +1,239 @@
+Day 1 of my 30-Day SOC Analyst Journey focused on understanding the fundamentals of Security Operations Centers (SOC), security monitoring, detection, and incident response.
+
+The goal was to understand the terminology and concepts that an entry-level SOC/L1 Analyst needs before moving into practical log analysis and detection.
+
+---
+
+## Topics Learned
+
+### 1. Security Operations Center (SOC)
+
+A SOC is a security team/function responsible for monitoring systems and networks, detecting suspicious activity, investigating security alerts, and responding to security incidents.
+
+### 2. SOC Analyst / L1 Analyst
+
+An L1 SOC Analyst is typically responsible for:
+
+- Monitoring security alerts
+- Reviewing logs
+- Investigating suspicious activity
+- Validating alerts
+- Identifying indicators of compromise (IOCs)
+- Escalating confirmed or complex incidents
+- Documenting findings
+
+---
+
+## 3. Security Events
+
+A security event is an observable activity or occurrence recorded by a system, application, network device, or security tool.
+
+Examples:
+
+- Failed login
+- Successful login
+- Firewall connection
+- Process execution
+- File creation
+- Network connection
+
+---
+
+## 4. Alerts
+
+An alert is a notification generated when a security tool or detection rule identifies activity that may require investigation.
+
+Example:
+
+Multiple failed login events → SIEM detection rule → *Brute-force alert*
+
+An alert does not automatically mean that a security incident has occurred.
+
+---
+
+## 5. Security Incidents
+
+A security incident is a confirmed or reasonably suspected security event that requires investigation and/or response.
+
+Important SOC mindset:
+
+> An alert is not automatically an incident.
+
+The analyst must investigate and determine whether the activity is legitimate, suspicious, or malicious.
+
+---
+
+## 6. Logs
+
+Logs provide records of activities occurring within systems and networks.
+
+Logs can help analysts:
+
+- Identify suspicious activity
+- Reconstruct events
+- Investigate authentication attempts
+- Determine timelines
+- Correlate activities
+- Validate security alerts
+
+---
+
+## 7. IOC — Indicator of Compromise
+
+An IOC is evidence that may indicate that a system or environment has been compromised.
+
+Examples:
+
+- Malicious IP address
+- Malicious domain
+- Suspicious URL
+- Malware file hash
+- Suspicious filename
+
+---
+
+## 8. TTP — Tactics, Techniques and Procedures
+
+TTP describes how an attacker operates.
+
+- *Tactics* — The attacker's objective
+- *Techniques* — Methods used to achieve the objective
+- *Procedures* — Specific implementation of those techniques
+
+TTPs describe attacker behavior, while IOCs are pieces of evidence that may be left behind.
+
+---
+
+## 9. SIEM
+
+SIEM stands for:
+
+*Security Information and Event Management*
+
+A SIEM helps security teams:
+
+- Collect logs
+- Centralize security data
+- Correlate events
+- Detect suspicious patterns
+- Generate alerts
+- Support investigations
+
+---
+
+## 10. EDR
+
+EDR stands for:
+
+*Endpoint Detection and Response*
+
+EDR monitors endpoints such as:
+
+- Windows computers
+- Linux systems
+- Servers
+- Workstations
+
+It collects endpoint telemetry and helps security analysts detect, investigate, and respond to suspicious activity.
+
+---
+
+# SOC Investigation Mindset
+
+One of the most important lessons from Day 1 was understanding the difference between an event, alert, and incident.
+
+The basic workflow I learned is:
+
+*Event → Alert → Investigation → Determine if Incident → Response*
+
+A SOC analyst should not automatically classify every alert as a security incident.
+
+The analyst should investigate the available evidence and determine whether the activity is:
+
+- Benign
+- Suspicious
+- Malicious
+- A confirmed security incident
+
+---
+
+# Example Investigation
+
+### Scenario
+
+A SIEM generates an alert:
+
+> Multiple failed login attempts followed by a successful login from an unusual IP address.
+
+### Initial investigation
+
+I would investigate:
+
+1. Source IP address
+2. IP reputation
+3. Login time
+4. User account involved
+5. Number of failed attempts
+6. Successful login
+7. Activity after successful authentication
+8. Other logs associated with the account
+9. Whether the user recognizes the activity
+
+The goal is to determine whether the alert represents legitimate activity, suspicious behavior, or a potential account compromise.
+
+---
+
+# Tools and Technologies Introduced
+
+- SIEM
+- EDR
+- Security logs
+- Windows/Linux systems
+- VirtualBox
+- Ubuntu Server
+- Ubuntu Desktop
+- Windows 10
+- Kali Linux
+- Security Onion
+
+---
+
+# Hands-On Lab Preparation
+
+I also began preparing a local cybersecurity lab using Oracle VirtualBox.
+
+Planned/installed lab systems include:
+
+- Ubuntu Server
+- Ubuntu Desktop
+- Windows 10
+- Kali Linux
+- Security Onion
+- Cybersecurity workstation
+
+The purpose of the lab is to eventually generate security events and investigate them from a SOC analyst perspective.
+
+---
+
+# Day 1 Assessment
+
+I completed a Day 1 SOC fundamentals assessment.
+
+*Score: 80%*
+
+### Areas I demonstrated understanding in:
+
+- SOC fundamentals
+- SIEM
+- EDR
+- Logs
+- IOC
+- TTP
+- Basic alert analysis
+- Basic SOC investigation workflow
+
+### Areas I need to improve:
+
+- Clearly distinguishing events, alerts, and incidents
+- Avoiding premature classification of alerts as confirmed incidents
+- Expanding investigations beyond a single indicator
