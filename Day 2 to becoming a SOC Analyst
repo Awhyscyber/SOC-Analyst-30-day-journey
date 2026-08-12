@@ -1,0 +1,90 @@
+[2:41 PM, 8/12/2026] Aysnoop: Day2- Today I decided to work with my home lab environment instead of focusing on theory alone.I used my host terminal to connect ssh on d Ubuntu server,confirmed ssh is active on the server and use the promiscuous mode to ensure packets are flowing across d 3 interfaces I’m working with.
+
+I got familiar with tshark as a packet capturing tool to capture all packets flowing all the interfaces on my lab environment. I understood it’s better to understand what each command mean, what they do, how they are applied rather than memorizing all commands at once.
+I first installed tshark on my Ubuntu server lab environment by using the Sudo apt install tshark command. I saw how the installation and configuration was updated on my Ubuntu lab environment. Then I ran my first command to capture the packet flowing across the Ubuntu server   Interface by using the ip route or ip addr command to know the exact interface the Ubuntu server is working on.Then I ran my first command(Sudo tshark -i (Ubuntu interface name) 2 capture flowing 2ru d specific interface. I inspected d packets, checked the protocols running on it. 
+
+As a SOC Analyst, it can be very overwhelming having to inspect all the packet captured because it can be a lot, so it’s better to learn how to filter the protocol u are looking to monitor and inspects. The tshark shows the raw packets flowing across all interfaces
+
+Then I ran the second command( Sudo tshark -i (interface name) -f ‘ICMP’ to filter the ICMP command but because there’s no ICMP packets flowing on the interface. I had to run the echo requests and reply ping to the Ubuntu server ip from the Ubuntu desktop to the echo requests and replies ICMP packets then appear on the power shell host terminal connected with the ssh on the Ubuntu server into as system administrator. 
+I then saved all the packets captured on file share directory as tmp/capture.pcapng to be able to analyze and check the contents of the packets using zeek which I will be learning and explaining in my next learning lesson.
+[5:40 PM, 8/12/2026] Aysnoop: Absolutely. Since this is for your GitHub README, I’d make it professional but still clearly show that you actually performed the lab work—not just watched videos.
+
+:::writing{variant=“document” id=“58321” title=“Day 2 — Network Security, Ports & Packet Capture”}
+
+Day 2 — Network Security, Ports & Packet Capture
+
+What I Learned
+
+Today, I focused on network security fundamentals, network protocols, ports, and packet analysis. I also worked hands-on with my home lab to understand how network traffic moves between different systems.
+
+Network Fundamentals
+
+I learned more about:
+	•	What a network is and how devices communicate with each other.
+	•	The role of network protocols in controlling how devices communicate.
+	•	The difference between end devices and network infrastructure.
+	•	How different network services communicate using port numbers.
+	•	Why ports can be thought of as entrance doors to services running on a network.
+
+ Understanding Ports
+
+I learned that services listening for network connections are associated with specific port numbers.
+
+For example:
+	•	SSH — Port 22
+	•	HTTP — Port 80
+	•	HTTPS — Port 443
+	•	DNS — Port 53
+
+Understanding ports is important for a SOC Analyst because unusual or unexpected connections to ports can provide useful information when investigating network activity.
+
+Promiscuous Mode
+
+I also learned how to configure promiscuous mode in my virtual lab environment.
+
+My lab contains:
+	•	Ubuntu Server
+	•	Ubuntu Desktop
+	•	Windows 10
+
+Promiscuous mode allowed my network interface to receive and inspect packets beyond only the traffic specifically addressed to that interface.
+
+I used this to verify that network packets were flowing across the interfaces in my lab environment.
+
+TShark — Packet Capture
+
+I learned how to use TShark as a command-line packet capture and network analysis tool.
+
+I used TShark to:
+	•	Capture network packets.
+	•	Monitor traffic moving through my lab.
+	•	Observe communication between different machines.
+	•	Inspect network protocols and packet information.
+	•	Get hands-on experience with network traffic analysis.
+
+Hands-On Lab
+
+I applied what I learned by capturing traffic flowing through my home lab environment and examining the packets generated between my Ubuntu Server, Ubuntu Desktop, and Windows 10 machines.
+
+This helped me connect the theoretical concepts of protocols, ports, interfaces, and packets to real network traffic.
+
+SOC Analyst Connection
+
+Today’s lab helped me understand an important part of SOC analysis:
+
+	Network traffic contains evidence.
+
+By understanding protocols, ports, packet captures, and normal network communication, I can begin identifying unusual traffic that may indicate suspicious activity.
+
+ Key Takeaways
+	•	A network allows devices to communicate and exchange data.
+	•	Protocols define how network communication takes place.
+	•	Ports identify services that are listening for network connections.
+	•	Promiscuous mode can be useful for network traffic monitoring in a lab environment.
+	•	TShark can capture and analyze packets from the command line.
+	•	Packet analysis is an important skill for a SOC Analyst.
+	•	Understanding normal network behavior is essential before identifying abnormal or malicious activity.
+
+Day 2 completed 
+
+Next focus: Continue building practical SOC skills through logs, network monitoring, packet analysis, and security tools.
