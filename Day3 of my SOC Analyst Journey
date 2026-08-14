@@ -1,0 +1,61 @@
+Day 3 — Phishing Analysis, Packet Capture & Network Monitoring
+
+Today I focused on phishing attacks, email security analysis, packet capture, and network traffic monitoring.
+
+Phishing & Email Security
+
+I learned about:
+	•	Phishing attacks — how attackers use deceptive emails and messages to trick users into clicking malicious links, opening attachments, or revealing sensitive information.
+	•	Email spoofing — how attackers manipulate email information to make a message appear to come from a legitimate sender.
+	•	Email header analysis — how to examine email headers to investigate the sender, recipient, mail servers, timestamps, IP addresses, and other information that can help identify suspicious emails.
+	•	Static analysis — examining a suspicious file, email, URL, or other artifact without executing it.
+	•	Dynamic analysis — safely observing the behavior of a suspicious file or artifact while it is executed or interacted with in a controlled environment.
+
+ Network Packet Capture with TShark
+
+I practiced using TShark to capture network traffic flowing through my Ubuntu Server and Windows 10 lab environment.
+
+I generated network traffic by pinging the Ubuntu Server from my Ubuntu Desktop and then captured the resulting packets.
+
+I learned and practiced several important TShark options:
+	•	-i — specify the network interface to listen on.
+	•	-f — apply a capture filter while capturing traffic.
+	•	-w — write captured packets to a file.
+	•	-a — apply an automatic capture stop condition, such as a duration.
+	•	-Y — apply a display filter when analyzing captured packets.
+
+This gave me practical experience with capturing, saving, and filtering network traffic.
+
+Network Monitoring with Zeek
+
+I also learned how to use Zeek as a network security monitoring and traffic analysis tool.
+
+I learned that unlike TShark, which allows me to directly capture and inspect packets, Zeek analyzes network traffic and converts the observed activity into useful structured security logs and events.
+
+I practiced analyzing a saved packet capture using:
+
+cd /tmp
+ls
+sudo /opt/zeek/bin/zeek -r capture.pcapng
+
+I learned that Zeek generates different logs based on the network activity it observes. Some important logs include:
+	•	conn.log — network connections, including source/destination information, ports, timestamps, duration, and bytes.
+	•	dns.log — DNS queries and related DNS activity.
+	•	http.log — HTTP activity when applicable.
+	•	Other logs can provide information about SSH, SSL/TLS, files, and other network protocols.
+
+I also explored Zeek’s configuration through:
+
+sudo nano /opt/zeek/etc/node.cfg
+
+and learned that Zeek’s configuration and deployment settings are important when running it as a network monitoring system.
+
+Key Takeaway
+
+Today I progressed from simply capturing network packets to understanding how security tools can analyze network activity and transform raw traffic into useful security information.
+
+My workflow is becoming:
+
+Generate Network Traffic → Capture Packets with TShark → Save PCAP → Analyze Traffic with Zeek → Generate Security Logs → Investigate Network Activity
+
+This is an important skill for a SOC Analyst because network monitoring can help identify suspicious connections, unusual DNS activity, unexpected ports, and other indicators that may require investigation.
